@@ -2,13 +2,11 @@
 // Created by Alen BADRAJAN on 7/25/17.
 //
 
-#ifndef EX02_ISQUAD_HPP
-#define EX02_ISQUAD_HPP
+#ifndef EX02_ISPACEMARINE_H_
+#define EX02_ISPACEMARINE_H_
 
 #include <iostream>
 #include <string>
-#include "ISpaceMarine.hpp"
-
 
 # define STR std::string
 # define OUT std::cout
@@ -16,14 +14,16 @@
 # define ENDL std::endl
 # define SEPARATOR OUT << ENDL << "==================================================================\n" << ENDL
 
-class ISquad
-{
-public:
+class ISpaceMarine {
 
-    virtual ~ISquad() {}
-    virtual int getCount() const = 0;
-    virtual ISpaceMarine* getUnit(int) const = 0;
-    virtual int push(ISpaceMarine*) = 0;
+public:
+	
+    virtual ~ISpaceMarine() {}
+    virtual ISpaceMarine* clone() const = 0;
+    virtual void battleCry() const = 0;
+    virtual void rangedAttack() const = 0;
+    virtual void meleeAttack() const = 0;
 	
 };
-#endif //EX02_ISQUAD_HPP
+
+#endif 
